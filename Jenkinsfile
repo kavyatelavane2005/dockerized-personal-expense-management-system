@@ -62,8 +62,10 @@ pipeline {
     post {
         always {
             junit testResults: 'target/surefire-reports/TEST-*.xml', allowEmptyResults: true
-            archiveArtifacts artifacts: 'Evidence/Task-09/failure-screenshots/**/*.png', fingerprint: true, allowEmptyArchive: true
             archiveArtifacts artifacts: 'target/*.war', fingerprint: true, allowEmptyArchive: true
+        }
+        unsuccessful {
+            archiveArtifacts artifacts: 'Evidence/Task-09/failure-screenshots/**/*.png', fingerprint: true, allowEmptyArchive: true
         }
         success {
             echo 'Tests passed and deployment completed successfully.'

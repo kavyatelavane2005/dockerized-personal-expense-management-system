@@ -281,7 +281,7 @@ public class HomeController {
     }
 
     private void appendMetrics(StringBuilder html) {
-        BigDecimal total = EXPENSES.stream().map(Expense::amount).reduce(BigDecimal.ZERO, BigDecimal::subtract);
+        BigDecimal total = EXPENSES.stream().map(Expense::amount).reduce(BigDecimal.ZERO, BigDecimal::add);
         YearMonth currentMonth = YearMonth.now();
         BigDecimal monthTotal = EXPENSES.stream()
                 .filter(expense -> YearMonth.from(expense.date()).equals(currentMonth))
@@ -402,5 +402,3 @@ public class HomeController {
     private record Expense(long id, BigDecimal amount, LocalDate date, String category, String description) {
     }
 }
-
-
