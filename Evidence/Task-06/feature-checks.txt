@@ -1,0 +1,9 @@
+GET / account setup -> HTTP 200; Spendwise branding: True; profile form: True
+POST /account create profile -> HTTP 200
+GET / profile dashboard -> update form prefilled: True; account panel: True
+POST /account update profile -> HTTP 200
+GET / updated dashboard -> total KPI: True; category chart: True; transaction row: True
+GET receipt -> HTTP 200; account update present: True
+GET CSV -> HTTP 200; file attachment: attachment; filename=expense-summary.csv
+POST invalid email -> HTTP 400
+Updated app PID: 15128
