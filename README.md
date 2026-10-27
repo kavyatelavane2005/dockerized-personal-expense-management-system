@@ -34,3 +34,8 @@ Use feature/task-<number>-<short-name> for features, bugfix/<short-name> for fix
 - src/test/java — automated tests
 - Evidence/ — task evidence and build/verification logs
 
+
+## Task 8 deployment
+
+The Jenkinsfile builds an executable/deployable WAR, archives it, and deploys it to Apache Tomcat 11. The DEPLOY_ENV parameter controls the deployment context (development or staging). The demo Tomcat instance listens on port 8090. See Evidence/Task-08 for deployment notes and evidence.
+

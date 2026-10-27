@@ -1,0 +1,8 @@
+Task 8 deployment plan
+- Build output: executable Spring Boot WAR.
+- Target container: Apache Tomcat 11.0.27 at C:\DevTools\Tomcat\apache-tomcat-11.0.27.
+- Jenkins parameter: DEPLOY_ENV selects the deployed context name (development or staging).
+- Tomcat HTTP port: 8090 (Jenkins is using 8080).
+- Health check: Jenkins polls the deployed URL for an HTTP 200 page containing Spendwise.
+- Build evidence: Jenkinsfile pipeline output and archived WAR under target/*.war.
+- Screenshot checklist: Jenkinsfile in repository; successful Checkout/Build/Archive/Deploy pipeline; archived WAR; deployed app URL in browser; parameter values.

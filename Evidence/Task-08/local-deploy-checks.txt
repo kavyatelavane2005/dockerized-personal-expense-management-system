@@ -1,0 +1,5 @@
+Tomcat 11.0.27 started on port 8090
+WAR deployed: expense-manager-development.war
+GET /expense-manager-development/ -> HTTP 200
+Spendwise page marker found: True
+Launcher PID: 14340
