@@ -43,3 +43,7 @@ The Jenkinsfile builds an executable/deployable WAR, archives it, and deploys it
 ## Task 9 Selenium tests
 
 Run `.\mvnw.cmd test` to start the Spring Boot test server and execute the Selenium journeys in Microsoft Edge. Test cases cover account setup, valid expense entry and summary totals, negative amount validation, CSV export, and receipt download. Failure screenshots are saved under `Evidence/Task-09/failure-screenshots`; Surefire reports are generated under `target/surefire-reports`.
+
+## Task 10 continuous testing
+
+The Jenkins pipeline runs `mvnw.cmd -B clean verify` before archiving or deployment. Maven test failures stop later stages. Jenkins publishes Surefire XML results and archives failure screenshots from `Evidence/Task-09/failure-screenshots/`. Configure the Jenkins Pipeline job to build the `feature/task-10-continuous-testing` branch for this task.

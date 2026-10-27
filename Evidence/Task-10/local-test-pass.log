@@ -1,0 +1,112 @@
+[INFO] Scanning for projects...
+[INFO] Loaded 24268 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[INFO] 
+[INFO] --------------------------< com.example:demo >--------------------------
+[INFO] Building  0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ demo ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ demo ---
+[INFO] Loaded 74 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 2 source files with javac [debug parameters release 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ demo ---
+[INFO] skip non existing resourceDirectory C:\Users\kavya\OneDrive\Desktop\Project\DevOps\demo\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ demo ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 2 source files with javac [debug parameters release 17] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ demo ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.example.demo.DemoApplicationTests
+00:45:15.467 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:45:15.623 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.DemoApplicationTests
+00:45:15.727 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:45:15.729 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.DemoApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.2)
+
+2026-10-28T00:45:16.166+05:30  INFO 19204 --- [personal-expense-manager] [           main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 21.0.12 with PID 19204 (started by kavya in C:\Users\kavya\OneDrive\Desktop\Project\DevOps\demo)
+2026-10-28T00:45:16.166+05:30  INFO 19204 --- [personal-expense-manager] [           main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2026-10-28T00:45:17.467+05:30  INFO 19204 --- [personal-expense-manager] [           main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 1.665 seconds (process running for 3.032)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (C:\Users\kavya\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.15\byte-buddy-agent-1.18.15.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.251 s -- in com.example.demo.DemoApplicationTests
+[INFO] Running com.example.demo.SpendwiseSeleniumJourneyTest
+2026-10-28T00:45:18.446+05:30  INFO 19204 --- [personal-expense-manager] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.demo.SpendwiseSeleniumJourneyTest]: SpendwiseSeleniumJourneyTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-28T00:45:18.455+05:30  INFO 19204 --- [personal-expense-manager] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.SpendwiseSeleniumJourneyTest
+2026-10-28T00:45:18.462+05:30  INFO 19204 --- [personal-expense-manager] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.demo.SpendwiseSeleniumJourneyTest]: SpendwiseSeleniumJourneyTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-28T00:45:18.479+05:30  INFO 19204 --- [personal-expense-manager] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.SpendwiseSeleniumJourneyTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.2)
+
+2026-10-28T00:45:18.558+05:30  INFO 19204 --- [personal-expense-manager] [           main] c.e.demo.SpendwiseSeleniumJourneyTest    : Starting SpendwiseSeleniumJourneyTest using Java 21.0.12 with PID 19204 (started by kavya in C:\Users\kavya\OneDrive\Desktop\Project\DevOps\demo)
+2026-10-28T00:45:18.558+05:30  INFO 19204 --- [personal-expense-manager] [           main] c.e.demo.SpendwiseSeleniumJourneyTest    : No active profile set, falling back to 1 default profile: "default"
+2026-10-28T00:45:19.063+05:30  INFO 19204 --- [personal-expense-manager] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-28T00:45:19.089+05:30  INFO 19204 --- [personal-expense-manager] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-28T00:45:19.090+05:30  INFO 19204 --- [personal-expense-manager] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-10-28T00:45:19.217+05:30  INFO 19204 --- [personal-expense-manager] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 652 ms
+2026-10-28T00:45:19.418+05:30  INFO 19204 --- [personal-expense-manager] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 49695 (http) with context path '/'
+2026-10-28T00:45:19.421+05:30  INFO 19204 --- [personal-expense-manager] [           main] c.e.demo.SpendwiseSeleniumJourneyTest    : Started SpendwiseSeleniumJourneyTest in 0.92 seconds (process running for 4.985)
+2026-10-28T00:45:21.284+05:30  WARN 19204 --- [personal-expense-manager] [           main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find an exact match for CDP version 156, returning the closest version; found: 155; Please update to a Selenium version that supports CDP version 156
+2026-10-28T00:45:21.386+05:30  INFO 19204 --- [personal-expense-manager] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-28T00:45:21.386+05:30  INFO 19204 --- [personal-expense-manager] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-28T00:45:21.388+05:30  INFO 19204 --- [personal-expense-manager] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Saved Selenium journey screenshot: C:\Users\kavya\OneDrive\Desktop\Project\DevOps\demo\Evidence\Task-09\screenshots\SJ-01-account-created.png
+2026-10-28T00:46:04.077+05:30  WARN 19204 --- [personal-expense-manager] [           main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find an exact match for CDP version 156, returning the closest version; found: 155; Please update to a Selenium version that supports CDP version 156
+Saved Selenium journey screenshot: C:\Users\kavya\OneDrive\Desktop\Project\DevOps\demo\Evidence\Task-09\screenshots\SJ-02-expense-summary.png
+2026-10-28T00:46:40.557+05:30  WARN 19204 --- [personal-expense-manager] [           main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find an exact match for CDP version 156, returning the closest version; found: 155; Please update to a Selenium version that supports CDP version 156
+Saved Selenium journey screenshot: C:\Users\kavya\OneDrive\Desktop\Project\DevOps\demo\Evidence\Task-09\screenshots\SJ-03-invalid-amount-blocked.png
+2026-10-28T00:47:13.138+05:30  WARN 19204 --- [personal-expense-manager] [           main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find an exact match for CDP version 156, returning the closest version; found: 155; Please update to a Selenium version that supports CDP version 156
+Saved Selenium journey screenshot: C:\Users\kavya\OneDrive\Desktop\Project\DevOps\demo\Evidence\Task-09\screenshots\SJ-04-csv-and-receipt-download.png
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 160.2 s -- in com.example.demo.SpendwiseSeleniumJourneyTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- war:3.5.1:war (default-war) @ demo ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [demo] in [C:\Users\kavya\OneDrive\Desktop\Project\DevOps\demo\target\demo-0.0.1-SNAPSHOT]
+[INFO] Processing war project
+[INFO] Building war: C:\Users\kavya\OneDrive\Desktop\Project\DevOps\demo\target\demo-0.0.1-SNAPSHOT.war
+[INFO] 
+[INFO] --- spring-boot:4.1.2:repackage (repackage) @ demo ---
+[INFO] Loaded 50 auto-discovered prefixes for remote repository ow2-snapshot (prefixes-ow2-snapshot.txt)
+[INFO] Replacing main artifact C:\Users\kavya\OneDrive\Desktop\Project\DevOps\demo\target\demo-0.0.1-SNAPSHOT.war with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to C:\Users\kavya\OneDrive\Desktop\Project\DevOps\demo\target\demo-0.0.1-SNAPSHOT.war.original
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  02:53 min
+[INFO] Finished at: 2026-10-28T00:48:01+05:30
+[INFO] ------------------------------------------------------------------------

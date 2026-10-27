@@ -26,12 +26,12 @@ pipeline {
             }
         }
 
-        stage('Build and package') {
+        stage('Build, test and package') {
             steps {
                 bat '''
                     set "JAVA_HOME=C:\\DevTools\\jdk-21"
                     set "PATH=%JAVA_HOME%\\bin;%PATH%"
-                    call mvnw.cmd -B -DskipTests clean package
+                    call mvnw.cmd -B clean verify
                 '''
             }
         }
@@ -60,14 +60,14 @@ pipeline {
     }
 
     post {
-        success {
-            echo 'Deployment completed successfully.'
-            echo 'Open the deployed application at http://localhost:8090/expense-manager-<DEPLOY_ENV>/.'
-        }
         always {
+            junit testResults: 'target/surefire-reports/TEST-*.xml', allowEmptyResults: true
+            archiveArtifacts artifacts: 'Evidence/Task-09/failure-screenshots/**/*.png', fingerprint: true, allowEmptyArchive: true
             archiveArtifacts artifacts: 'target/*.war', fingerprint: true, allowEmptyArchive: true
+        }
+        success {
+            echo 'Tests passed and deployment completed successfully.'
+            echo 'Open the deployed application at http://localhost:8090/expense-manager-<DEPLOY_ENV>/.'
         }
     }
 }
-
-
