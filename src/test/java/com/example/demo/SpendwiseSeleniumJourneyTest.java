@@ -117,7 +117,8 @@ class SpendwiseSeleniumJourneyTest {
         wait.until(ExpectedConditions.textToBePresentInElementLocated(
                 By.cssSelector("[role='status']"), "Expense recorded. Your summary is up to date."));
         assertTrue(driver.findElement(By.cssSelector("tbody")).getText().contains(EXPENSE_DESCRIPTION));
-        assertTrue(driver.findElement(By.cssSelector(".metrics")).getText().contains("₹123.45"));
+        assertEquals("₹123.45", driver.findElement(By.cssSelector(".metrics .metric:nth-child(1) .metric-value")).getText(), "Total spending should show the sum of all expense amounts.");
+        assertEquals("₹123.45", driver.findElement(By.cssSelector(".metrics .metric:nth-child(2) .metric-value")).getText(), "This month should show the month total.");
         assertTrue(driver.findElement(By.cssSelector(".category-list")).getText().contains("Selenium Test"));
         captureSuccessScreenshot("SJ-02-expense-summary");
     }
@@ -203,4 +204,5 @@ class SpendwiseSeleniumJourneyTest {
         }
     }
 }
+
 

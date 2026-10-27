@@ -4,6 +4,13 @@
 **Result:** `BUILD SUCCESS`.
 **Tests:** 5 run, 0 failures, 0 errors, 0 skipped.
 
-Jenkins is configured to use `mvnw.cmd -B clean verify` in its separate job workspace. The local Windows file-lock issue did not affect `verify`; Jenkins still needs an actual run to confirm its clean workspace and publish the JUnit report.
+The Jenkinsfile now uses `mvnw.cmd -B clean verify`; the Jenkins job must first be pointed at this feature branch. The local Windows file-lock issue did not affect `verify`. Jenkins execution and JUnit publication are still pending.
 
 The full terminal log is `local-test-pass.log`; Surefire reports are in `local-reports/`.
+
+## Deliberate regression check (local)
+
+A temporary defect changed the total-spending reducer from addition to subtraction. The Selenium assertion initially searched the entire metrics section and did not isolate the total card; it was strengthened to assert the total and monthly cards independently. The rerun failed as expected: 5 tests, 1 failure. The failure states `Total spending should show the sum of all expense amounts` and expected `₹123.45`, but received `₹-123.45`.
+
+Evidence: `local-test-failure.log`, `local-failure-reports/`, and `screenshots/SJ-02-total-regression-failure.png`. The temporary code defect remains in this branch until its correction commit, after Jenkins publishes the failing quality-gate result.
+

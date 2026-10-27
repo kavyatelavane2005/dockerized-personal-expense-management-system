@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: com.example.demo.SpendwiseSeleniumJourneyTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 110.0 s <<< FAILURE! -- in com.example.demo.SpendwiseSeleniumJourneyTest
+com.example.demo.SpendwiseSeleniumJourneyTest.addExpenseUpdatesRecentTransactionsAndTotals -- Time elapsed: 29.43 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Total spending should show the sum of all expense amounts. ==> expected: <₹123.45> but was: <₹-123.45>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:184)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1199)
+	at com.example.demo.SpendwiseSeleniumJourneyTest.addExpenseUpdatesRecentTransactionsAndTotals(SpendwiseSeleniumJourneyTest.java:120)
+
