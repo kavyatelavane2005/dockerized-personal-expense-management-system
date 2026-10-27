@@ -13,9 +13,9 @@ Open http://localhost:8081.
 
 ## MVP features
 
-- Single account profile with name and email validation
+- Single account profile with name/email validation and profile editing
 - Expense entry with positive amount, date, category, and description validation
-- Overall spending total, transaction count, and category totals
+- Responsive dashboard with spending KPIs, category bars, and recent transactions
 - Downloadable per-expense text receipt and CSV summary
 - HTML escaping for user-entered account and expense text
 
@@ -33,3 +33,4 @@ Use feature/task-<number>-<short-name> for features, bugfix/<short-name> for fix
 - src/main/resources — application configuration
 - src/test/java — automated tests
 - Evidence/ — task evidence and build/verification logs
+

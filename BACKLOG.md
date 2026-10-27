@@ -22,13 +22,14 @@ MVP development is complete on feature branches; Task 6 is ready for review and 
 
 ## Task 6 acceptance checklist
 
-- [x] Single demo account setup with input validation
+- [x] Single demo account setup/edit with input validation
 - [x] Expense entry and server-side validation
 - [x] Total, count, and per-category spending summary
 - [x] Downloadable receipt and CSV summary
 - [x] Second feature branch and resolved merge-conflict evidence
-- [x] Tagged release-ready source baseline: v0.2.0
+- [x] Release-ready baseline with dashboard/profile improvements: v0.2.1 (v0.2.0 retained)
 
 ## Task 6 evidence
 
 See Evidence/Task-06 for the build log, manual endpoint checks, implementation notes, and conflict-resolution transcript. Capture browser and GitHub screenshots in the Word report.
+
