@@ -1,0 +1,2 @@
+Task 6 conflict exercise
+summary=Base summary
