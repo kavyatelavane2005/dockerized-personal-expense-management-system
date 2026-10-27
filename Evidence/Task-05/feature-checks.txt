@@ -1,0 +1,8 @@
+Task 5 manual verification (local app at http://localhost:8081)
+
+- GET /: HTTP 200; expense form and empty-state message displayed.
+- POST /expenses with amount 250.50, date 2026-10-27, category Food, description Sample lunch expense: redirected to the list; sample entry and amount displayed.
+- POST /expenses with amount -5: HTTP 400; validation message shown; invalid entry was not added.
+- Build: Maven package completed successfully with tests skipped.
+
+Expense data is held in memory for this feature branch and is lost when the application restarts.
