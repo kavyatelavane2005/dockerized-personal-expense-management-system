@@ -1,2 +1,1 @@
-Task 6 conflict exercise
-summary=Base summary
+summary=Overall and category totals
