@@ -1,1 +1,1 @@
-summary=Category totals
+summary=Overall total and category totals
