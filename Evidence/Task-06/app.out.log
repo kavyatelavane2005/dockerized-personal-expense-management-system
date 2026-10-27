@@ -1,0 +1,21 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.2)
+
+2026-10-27T23:06:37.115+05:30  INFO 36576 --- [personal-expense-manager] [           main] com.example.demo.DemoApplication         : Starting DemoApplication v0.0.1-SNAPSHOT using Java 21.0.12 with PID 36576 (C:\Users\kavya\OneDrive\Desktop\Project\DevOps\demo\target\demo-0.0.1-SNAPSHOT.jar started by kavya in C:\Users\kavya\OneDrive\Desktop\Project\DevOps\demo)
+2026-10-27T23:06:37.120+05:30  INFO 36576 --- [personal-expense-manager] [           main] com.example.demo.DemoApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-10-27T23:06:38.465+05:30  INFO 36576 --- [personal-expense-manager] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-10-27T23:06:38.493+05:30  INFO 36576 --- [personal-expense-manager] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-27T23:06:38.494+05:30  INFO 36576 --- [personal-expense-manager] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-10-27T23:06:38.534+05:30  INFO 36576 --- [personal-expense-manager] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1340 ms
+2026-10-27T23:06:38.954+05:30  INFO 36576 --- [personal-expense-manager] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/'
+2026-10-27T23:06:38.967+05:30  INFO 36576 --- [personal-expense-manager] [           main] com.example.demo.DemoApplication         : Started DemoApplication in 2.396 seconds (process running for 3.037)
+2026-10-27T23:06:39.031+05:30  INFO 36576 --- [personal-expense-manager] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-27T23:06:39.031+05:30  INFO 36576 --- [personal-expense-manager] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-27T23:06:39.031+05:30  INFO 36576 --- [personal-expense-manager] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms

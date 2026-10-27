@@ -1,0 +1,6 @@
+GET / -> 200; account: True; summary total: True; category: True
+POST /account -> 200; demo profile saved
+POST /expenses -> 200; sample expense saved
+GET receipt -> 200; attachment; filename=expense-receipt-1.txt; receipt id present: True
+GET CSV -> 200; attachment; filename=expense-summary.csv; sample row present: True
+POST negative amount -> HTTP 400; rejected as expected

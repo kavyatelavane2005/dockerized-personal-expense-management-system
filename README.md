@@ -1,32 +1,35 @@
 # Dockerized Personal Expense Management System
 
-A Spring Boot application being developed as an academic DevOps project. This branch adds the first expense-entry workflow. Expense records are currently held in memory and are cleared when the application restarts; persistent storage will be added in a later task.
-
-## Technology
-
-- Java 17 or later
-- Spring Boot and Maven Wrapper
-- Embedded Tomcat
-- Docker, Jenkins, Selenium, and Ansible are planned DevOps tools
+A Spring Boot MVP for setting up one demo profile, recording expenses, reviewing category totals, and downloading receipts or a CSV summary.
 
 ## Run locally
 
-In PowerShell, from this folder:
+Requires Java 17 or later. In PowerShell, from the project folder:
 
-```powershell
-.\mvnw.cmd package
-.\mvnw.cmd spring-boot:run
-```
+    .\mvnw.cmd -DskipTests package
+    .\mvnw.cmd spring-boot:run
 
-Open [http://localhost:8081](http://localhost:8081), enter an amount, date, category, and description, then select **Add expense**. The app validates required values and positive amounts before showing the saved entry.
+Open http://localhost:8081.
+
+## MVP features
+
+- Single account profile with name and email validation
+- Expense entry with positive amount, date, category, and description validation
+- Overall spending total, transaction count, and category totals
+- Downloadable per-expense text receipt and CSV summary
+- HTML escaping for user-entered account and expense text
+
+## Current limitation
+
+This learning MVP stores the account and expenses in memory. Data resets when the application restarts; authentication and persistent database storage are planned for later work.
 
 ## Branch naming
 
-Use `feature/task-<number>-<short-name>` for features, `bugfix/<short-name>` for fixes, and `docs/<short-name>` for documentation. Keep branch names lowercase and use hyphens between words. Merge reviewed changes into `development`; merge completed releases into `main`.
+Use feature/task-<number>-<short-name> for features, bugfix/<short-name> for fixes, and docs/<short-name> for documentation. Merge reviewed changes into development; merge completed releases into main.
 
-## Project structure
+## Project folders
 
-- `src/main/java` — application source code
-- `src/main/resources` — application configuration
-- `src/test/java` — automated tests
-- `Evidence/` — task evidence and build logs
+- src/main/java — Spring Boot application and web endpoints
+- src/main/resources — application configuration
+- src/test/java — automated tests
+- Evidence/ — task evidence and build/verification logs

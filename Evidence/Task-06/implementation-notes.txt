@@ -1,0 +1,9 @@
+Task 6 MVP implementation
+- Account setup validates a name and email for one in-memory demo profile.
+- Expense records validate required fields, valid dates, positive amounts, and field lengths.
+- The home page shows overall totals, transaction count, and totals by category.
+- Each expense has a downloadable text receipt; all expenses can be downloaded as CSV.
+- Account and expense values are HTML escaped when displayed.
+- Limitation: account and expenses are held in memory and reset on application restart.
+- Build command: .\mvnw.cmd -DskipTests package
+- Screenshot placeholders: browser account setup; saved expenses and summary; receipt download; CSV download; build success; Git conflict resolution; tag and PR.
