@@ -39,3 +39,7 @@ Use feature/task-<number>-<short-name> for features, bugfix/<short-name> for fix
 
 The Jenkinsfile builds an executable/deployable WAR, archives it, and deploys it to Apache Tomcat 11. The DEPLOY_ENV parameter controls the deployment context (development or staging). The demo Tomcat instance listens on port 8090. See Evidence/Task-08 for deployment notes and evidence.
 
+
+## Task 9 Selenium tests
+
+Run `.\mvnw.cmd test` to start the Spring Boot test server and execute the Selenium journeys in Microsoft Edge. Test cases cover account setup, valid expense entry and summary totals, negative amount validation, CSV export, and receipt download. Failure screenshots are saved under `Evidence/Task-09/failure-screenshots`; Surefire reports are generated under `target/surefire-reports`.
