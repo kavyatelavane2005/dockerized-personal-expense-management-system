@@ -29,8 +29,8 @@ pipeline {
         stage('Build and package') {
             steps {
                 bat '''
-                    set "JAVA_HOME=C:\DevTools\jdk-21"
-                    set "PATH=%JAVA_HOME%\bin;%PATH%"
+                    set "JAVA_HOME=C:\\DevTools\\jdk-21"
+                    set "PATH=%JAVA_HOME%\\bin;%PATH%"
                     call mvnw.cmd -B -DskipTests clean package
                 '''
             }
@@ -45,11 +45,11 @@ pipeline {
         stage('Deploy to Tomcat') {
             steps {
                 bat '''
-                    if not exist "%TOMCAT_HOME%\webapps" (
-                        echo Tomcat webapps folder was not found: %TOMCAT_HOME%\webapps
+                    if not exist "%TOMCAT_HOME%\\webapps" (
+                        echo Tomcat webapps folder was not found: %TOMCAT_HOME%\\webapps
                         exit /b 2
                     )
-                    copy /Y "target\demo-0.0.1-SNAPSHOT.war" "%TOMCAT_HOME%\webapps\expense-manager-%DEPLOY_ENV%.war"
+                    copy /Y "target\\demo-0.0.1-SNAPSHOT.war" "%TOMCAT_HOME%\\webapps\\expense-manager-%DEPLOY_ENV%.war"
                     if errorlevel 1 exit /b 1
                 '''
                 bat '''
