@@ -1,0 +1,351 @@
+Started by user Kavya Milind Telavane
+
+Obtained Jenkinsfile from git https://github.com/kavyatelavane2005/dockerized-personal-expense-management-system.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins
+ in C:\ProgramData\Jenkins\.jenkins\workspace\Expense-Manager-Pipeline-Deploy
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git.exe rev-parse --resolve-git-dir C:\ProgramData\Jenkins\.jenkins\workspace\Expense-Manager-Pipeline-Deploy\.git # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/kavyatelavane2005/dockerized-personal-expense-management-system.git # timeout=10
+Fetching upstream changes from https://github.com/kavyatelavane2005/dockerized-personal-expense-management-system.git
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.53.0.windows.2'
+ > git.exe fetch --tags --force --progress -- https://github.com/kavyatelavane2005/dockerized-personal-expense-management-system.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/feature/task-10-continuous-testing^{commit}" # timeout=10
+Checking out Revision 587e410a830a3e41f030ee6347cfbf9d58bb90f0 (refs/remotes/origin/feature/task-10-continuous-testing)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 587e410a830a3e41f030ee6347cfbf9d58bb90f0 # timeout=10
+Commit message: "fix: restore expense total and close Selenium regression"
+ > git.exe rev-list --no-walk b151372a7883a63bb49313cfe633cb25fc5652c1 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] checkout
+01:09:15  Selected Git installation does not exist. Using Default
+01:09:15  The recommended git tool is: NONE
+01:09:15  No credentials specified
+01:09:15   > git.exe rev-parse --resolve-git-dir C:\ProgramData\Jenkins\.jenkins\workspace\Expense-Manager-Pipeline-Deploy\.git # timeout=10
+01:09:15  Fetching changes from the remote Git repository
+01:09:15   > git.exe config remote.origin.url https://github.com/kavyatelavane2005/dockerized-personal-expense-management-system.git # timeout=10
+01:09:15  Fetching upstream changes from https://github.com/kavyatelavane2005/dockerized-personal-expense-management-system.git
+01:09:15   > git.exe --version # timeout=10
+01:09:15   > git --version # 'git version 2.53.0.windows.2'
+01:09:15   > git.exe fetch --tags --force --progress -- https://github.com/kavyatelavane2005/dockerized-personal-expense-management-system.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+01:09:17   > git.exe rev-parse "refs/remotes/origin/feature/task-10-continuous-testing^{commit}" # timeout=10
+01:09:17  Checking out Revision 587e410a830a3e41f030ee6347cfbf9d58bb90f0 (refs/remotes/origin/feature/task-10-continuous-testing)
+01:09:17   > git.exe config core.sparsecheckout # timeout=10
+01:09:17   > git.exe checkout -f 587e410a830a3e41f030ee6347cfbf9d58bb90f0 # timeout=10
+01:09:17  Commit message: "fix: restore expense total and close Selenium regression"
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build, test and package)
+[Pipeline] bat
+01:09:18  
+01:09:18  C:\ProgramData\Jenkins\.jenkins\workspace\Expense-Manager-Pipeline-Deploy>set "JAVA_HOME=C:\DevTools\jdk-21" 
+01:09:18  
+01:09:18  C:\ProgramData\Jenkins\.jenkins\workspace\Expense-Manager-Pipeline-Deploy>set "PATH=C:\DevTools\jdk-21\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Java\jdk-25\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\DevTools\gradle-9.6.1\bin;C:\DevTools\jdk-21\bin;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps" 
+01:09:18  
+01:09:18  C:\ProgramData\Jenkins\.jenkins\workspace\Expense-Manager-Pipeline-Deploy>call mvnw.cmd -B clean verify 
+01:09:20  [INFO] Scanning for projects...
+01:09:20  [INFO] Loaded 24267 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+01:09:21  [INFO] 
+01:09:21  [INFO] --------------------------< com.example:demo >--------------------------
+01:09:21  [INFO] Building  0.0.1-SNAPSHOT
+01:09:21  [INFO]   from pom.xml
+01:09:21  [INFO] --------------------------------[ war ]---------------------------------
+01:09:22  [INFO] 
+01:09:22  [INFO] --- clean:3.5.0:clean (default-clean) @ demo ---
+01:09:23  [INFO] Deleting C:\ProgramData\Jenkins\.jenkins\workspace\Expense-Manager-Pipeline-Deploy\target
+01:09:23  [INFO] 
+01:09:23  [INFO] --- resources:3.5.0:resources (default-resources) @ demo ---
+01:09:23  [INFO] Copying 1 resource from src\main\resources to target\classes
+01:09:23  [INFO] Copying 0 resource from src\main\resources to target\classes
+01:09:23  [INFO] 
+01:09:23  [INFO] --- compiler:3.15.0:compile (default-compile) @ demo ---
+01:09:24  [INFO] Loaded 74 auto-discovered prefixes for remote repository apache.snapshots (prefixes-apache.snapshots.txt)
+01:09:29  [INFO] Recompiling the module because of changed source code.
+01:09:29  [INFO] Compiling 2 source files with javac [debug parameters release 17] to target\classes
+01:09:39  [INFO] 
+01:09:39  [INFO] --- resources:3.5.0:testResources (default-testResources) @ demo ---
+01:09:39  [INFO] skip non existing resourceDirectory C:\ProgramData\Jenkins\.jenkins\workspace\Expense-Manager-Pipeline-Deploy\src\test\resources
+01:09:39  [INFO] 
+01:09:39  [INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ demo ---
+01:09:39  [INFO] Recompiling the module because of changed dependency.
+01:09:39  [INFO] Compiling 2 source files with javac [debug parameters release 17] to target\test-classes
+01:09:47  [INFO] 
+01:09:47  [INFO] --- surefire:3.5.6:test (default-test) @ demo ---
+01:09:47  [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+01:09:47  [INFO] 
+01:09:47  [INFO] -------------------------------------------------------
+01:09:47  [INFO]  T E S T S
+01:09:47  [INFO] -------------------------------------------------------
+01:09:49  [INFO] Running com.example.demo.DemoApplicationTests
+01:09:49  01:09:49.154 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+01:09:49  01:09:49.286 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.DemoApplicationTests
+01:09:49  01:09:49.405 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+01:09:49  01:09:49.407 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.DemoApplicationTests
+01:09:50  
+01:09:50    .   ____          _            __ _ _
+01:09:50   /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+01:09:50  ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+01:09:50   \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+01:09:50    '  |____| .__|_| |_|_| |_\__, | / / / /
+01:09:50   =========|_|==============|___/=/_/_/_/
+01:09:50  
+01:09:50   :: Spring Boot ::                (v4.1.2)
+01:09:50  
+01:09:50  2026-10-28T01:09:49.777+05:30  INFO 21600 --- [personal-expense-manager] [           main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 21.0.12 with PID 21600 (started by DESKTOP-VDHO6U7$ in C:\ProgramData\Jenkins\.jenkins\workspace\Expense-Manager-Pipeline-Deploy)
+01:09:50  2026-10-28T01:09:49.783+05:30  INFO 21600 --- [personal-expense-manager] [           main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+01:09:51  2026-10-28T01:09:50.982+05:30  INFO 21600 --- [personal-expense-manager] [           main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 1.511 seconds (process running for 2.748)
+01:09:51  Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+01:09:51  WARNING: A Java agent has been loaded dynamically (C:\Windows\system32\config\systemprofile\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.15\byte-buddy-agent-1.18.15.jar)
+01:09:51  WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+01:09:51  WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+01:09:51  WARNING: Dynamic loading of agents will be disallowed by default in a future release
+01:09:51  OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+01:09:53  [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.181 s -- in com.example.demo.DemoApplicationTests
+01:09:53  [INFO] Running com.example.demo.SpendwiseSeleniumJourneyTest
+01:09:53  2026-10-28T01:09:53.131+05:30  INFO 21600 --- [personal-expense-manager] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.demo.SpendwiseSeleniumJourneyTest]: SpendwiseSeleniumJourneyTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+01:09:53  2026-10-28T01:09:53.143+05:30  INFO 21600 --- [personal-expense-manager] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.SpendwiseSeleniumJourneyTest
+01:09:53  2026-10-28T01:09:53.147+05:30  INFO 21600 --- [personal-expense-manager] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.demo.SpendwiseSeleniumJourneyTest]: SpendwiseSeleniumJourneyTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+01:09:53  2026-10-28T01:09:53.150+05:30  INFO 21600 --- [personal-expense-manager] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.SpendwiseSeleniumJourneyTest
+01:09:53  
+01:09:53    .   ____          _            __ _ _
+01:09:53   /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+01:09:53  ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+01:09:53   \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+01:09:53    '  |____| .__|_| |_|_| |_\__, | / / / /
+01:09:53   =========|_|==============|___/=/_/_/_/
+01:09:53  
+01:09:53   :: Spring Boot ::                (v4.1.2)
+01:09:53  
+01:09:53  2026-10-28T01:09:53.301+05:30  INFO 21600 --- [personal-expense-manager] [           main] c.e.demo.SpendwiseSeleniumJourneyTest    : Starting SpendwiseSeleniumJourneyTest using Java 21.0.12 with PID 21600 (started by DESKTOP-VDHO6U7$ in C:\ProgramData\Jenkins\.jenkins\workspace\Expense-Manager-Pipeline-Deploy)
+01:09:53  2026-10-28T01:09:53.301+05:30  INFO 21600 --- [personal-expense-manager] [           main] c.e.demo.SpendwiseSeleniumJourneyTest    : No active profile set, falling back to 1 default profile: "default"
+01:09:54  2026-10-28T01:09:54.556+05:30  INFO 21600 --- [personal-expense-manager] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+01:09:54  2026-10-28T01:09:54.599+05:30  INFO 21600 --- [personal-expense-manager] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+01:09:54  2026-10-28T01:09:54.606+05:30  INFO 21600 --- [personal-expense-manager] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+01:09:55  2026-10-28T01:09:54.939+05:30  INFO 21600 --- [personal-expense-manager] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1633 ms
+01:09:55  2026-10-28T01:09:55.422+05:30  INFO 21600 --- [personal-expense-manager] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 53378 (http) with context path '/'
+01:09:55  2026-10-28T01:09:55.430+05:30  INFO 21600 --- [personal-expense-manager] [           main] c.e.demo.SpendwiseSeleniumJourneyTest    : Started SpendwiseSeleniumJourneyTest in 2.264 seconds (process running for 7.195)
+01:10:07  [ERROR] Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 13.12 s <<< FAILURE! -- in com.example.demo.SpendwiseSeleniumJourneyTest
+01:10:07  [ERROR] com.example.demo.SpendwiseSeleniumJourneyTest.createAccountShowsSuccessAndProfile -- Time elapsed: 5.312 s <<< ERROR!
+01:10:07  org.openqa.selenium.SessionNotCreatedException: 
+01:10:07  Could not start a new session. Response code 500. Message: session not created: Microsoft Edge failed to start: crashed.
+01:10:07    (session not created: DevToolsActivePort file doesn't exist)
+01:10:07    (The process started from msedge location C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe is no longer running, so msedgedriver is assuming that msedge has crashed.) 
+01:10:07  Host info: host: 'DESKTOP-VDHO6U7', ip: '192.168.0.103'
+01:10:07  Build info: version: '4.51.0', revision: '35c5fab 35c5fab4a58fa5878edb255eb7747b04ca51a015'
+01:10:07  System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.12'
+01:10:07  Driver info: org.openqa.selenium.edge.EdgeDriver
+01:10:07  Command: [null, newSession {capabilities=[Capabilities {browserName: MicrosoftEdge, ms:edgeOptions: {args: [--headless=new, --disable-gpu, --window-size=1440,1000], binary: C:\Program Files (x86)\Micr..., extensions: [], prefs: {download.default_directory: C:\ProgramData\Jenkins\.jen..., download.prompt_for_download: false, safebrowsing.enabled: true}}}]}]
+01:10:07  Capabilities {browserName: MicrosoftEdge, ms:edgeOptions: {args: [--headless=new, --disable-gpu, --window-size=1440,1000], binary: C:\Program Files (x86)\Micr..., extensions: [], prefs: {download.default_directory: C:\ProgramData\Jenkins\.jen..., download.prompt_for_download: false, safebrowsing.enabled: true}}}
+01:10:07  	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:115)
+01:10:07  	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+01:10:07  	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+01:10:07  	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:228)
+01:10:07  	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217)
+01:10:07  	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+01:10:07  	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:689)
+01:10:07  	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:294)
+01:10:07  	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:244)
+01:10:07  	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:229)
+01:10:07  	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:108)
+01:10:07  	at org.openqa.selenium.edge.EdgeDriver.<init>(EdgeDriver.java:64)
+01:10:07  	at org.openqa.selenium.edge.EdgeDriver.<init>(EdgeDriver.java:52)
+01:10:07  	at org.openqa.selenium.edge.EdgeDriver.<init>(EdgeDriver.java:48)
+01:10:07  	at com.example.demo.SpendwiseSeleniumJourneyTest.startBrowser(SpendwiseSeleniumJourneyTest.java:78)
+01:10:07  
+01:10:07  [ERROR] com.example.demo.SpendwiseSeleniumJourneyTest.addExpenseUpdatesRecentTransactionsAndTotals -- Time elapsed: 1.566 s <<< ERROR!
+01:10:07  org.openqa.selenium.SessionNotCreatedException: 
+01:10:07  Could not start a new session. Response code 500. Message: session not created: Microsoft Edge failed to start: crashed.
+01:10:07    (session not created: DevToolsActivePort file doesn't exist)
+01:10:07    (The process started from msedge location C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe is no longer running, so msedgedriver is assuming that msedge has crashed.) 
+01:10:07  Host info: host: 'DESKTOP-VDHO6U7', ip: '192.168.0.103'
+01:10:07  Build info: version: '4.51.0', revision: '35c5fab 35c5fab4a58fa5878edb255eb7747b04ca51a015'
+01:10:07  System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.12'
+01:10:07  Driver info: org.openqa.selenium.edge.EdgeDriver
+01:10:07  Command: [null, newSession {capabilities=[Capabilities {browserName: MicrosoftEdge, ms:edgeOptions: {args: [--headless=new, --disable-gpu, --window-size=1440,1000], binary: C:\Program Files (x86)\Micr..., extensions: [], prefs: {download.default_directory: C:\ProgramData\Jenkins\.jen..., download.prompt_for_download: false, safebrowsing.enabled: true}}}]}]
+01:10:07  Capabilities {browserName: MicrosoftEdge, ms:edgeOptions: {args: [--headless=new, --disable-gpu, --window-size=1440,1000], binary: C:\Program Files (x86)\Micr..., extensions: [], prefs: {download.default_directory: C:\ProgramData\Jenkins\.jen..., download.prompt_for_download: false, safebrowsing.enabled: true}}}
+01:10:07  	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:115)
+01:10:07  	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+01:10:07  	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+01:10:07  	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:228)
+01:10:07  	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217)
+01:10:07  	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+01:10:07  	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:689)
+01:10:07  	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:294)
+01:10:07  	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:244)
+01:10:07  	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:229)
+01:10:07  	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:108)
+01:10:07  	at org.openqa.selenium.edge.EdgeDriver.<init>(EdgeDriver.java:64)
+01:10:07  	at org.openqa.selenium.edge.EdgeDriver.<init>(EdgeDriver.java:52)
+01:10:07  	at org.openqa.selenium.edge.EdgeDriver.<init>(EdgeDriver.java:48)
+01:10:07  	at com.example.demo.SpendwiseSeleniumJourneyTest.startBrowser(SpendwiseSeleniumJourneyTest.java:78)
+01:10:07  
+01:10:07  [ERROR] com.example.demo.SpendwiseSeleniumJourneyTest.negativeAmountIsBlockedAndDoesNotCreateATransaction -- Time elapsed: 0.825 s <<< ERROR!
+01:10:07  org.openqa.selenium.SessionNotCreatedException: 
+01:10:07  Could not start a new session. Response code 500. Message: session not created: Microsoft Edge failed to start: crashed.
+01:10:07    (session not created: DevToolsActivePort file doesn't exist)
+01:10:07    (The process started from msedge location C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe is no longer running, so msedgedriver is assuming that msedge has crashed.) 
+01:10:07  Host info: host: 'DESKTOP-VDHO6U7', ip: '192.168.0.103'
+01:10:07  Build info: version: '4.51.0', revision: '35c5fab 35c5fab4a58fa5878edb255eb7747b04ca51a015'
+01:10:07  System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.12'
+01:10:07  Driver info: org.openqa.selenium.edge.EdgeDriver
+01:10:07  Command: [null, newSession {capabilities=[Capabilities {browserName: MicrosoftEdge, ms:edgeOptions: {args: [--headless=new, --disable-gpu, --window-size=1440,1000], binary: C:\Program Files (x86)\Micr..., extensions: [], prefs: {download.default_directory: C:\ProgramData\Jenkins\.jen..., download.prompt_for_download: false, safebrowsing.enabled: true}}}]}]
+01:10:07  Capabilities {browserName: MicrosoftEdge, ms:edgeOptions: {args: [--headless=new, --disable-gpu, --window-size=1440,1000], binary: C:\Program Files (x86)\Micr..., extensions: [], prefs: {download.default_directory: C:\ProgramData\Jenkins\.jen..., download.prompt_for_download: false, safebrowsing.enabled: true}}}
+01:10:07  	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:115)
+01:10:07  	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+01:10:07  	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+01:10:07  	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:228)
+01:10:07  	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217)
+01:10:07  	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+01:10:07  	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:689)
+01:10:07  	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:294)
+01:10:07  	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:244)
+01:10:07  	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:229)
+01:10:07  	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:108)
+01:10:07  	at org.openqa.selenium.edge.EdgeDriver.<init>(EdgeDriver.java:64)
+01:10:07  	at org.openqa.selenium.edge.EdgeDriver.<init>(EdgeDriver.java:52)
+01:10:07  	at org.openqa.selenium.edge.EdgeDriver.<init>(EdgeDriver.java:48)
+01:10:07  	at com.example.demo.SpendwiseSeleniumJourneyTest.startBrowser(SpendwiseSeleniumJourneyTest.java:78)
+01:10:07  
+01:10:07  [ERROR] com.example.demo.SpendwiseSeleniumJourneyTest.downloadCsvAndReceiptWithTheRecordedExpense -- Time elapsed: 3.050 s <<< ERROR!
+01:10:07  org.openqa.selenium.SessionNotCreatedException: 
+01:10:07  Could not start a new session. Response code 500. Message: session not created: Microsoft Edge failed to start: crashed.
+01:10:07    (session not created: DevToolsActivePort file doesn't exist)
+01:10:07    (The process started from msedge location C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe is no longer running, so msedgedriver is assuming that msedge has crashed.) 
+01:10:07  Host info: host: 'DESKTOP-VDHO6U7', ip: '192.168.0.103'
+01:10:07  Build info: version: '4.51.0', revision: '35c5fab 35c5fab4a58fa5878edb255eb7747b04ca51a015'
+01:10:07  System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.12'
+01:10:07  Driver info: org.openqa.selenium.edge.EdgeDriver
+01:10:07  Command: [null, newSession {capabilities=[Capabilities {browserName: MicrosoftEdge, ms:edgeOptions: {args: [--headless=new, --disable-gpu, --window-size=1440,1000], binary: C:\Program Files (x86)\Micr..., extensions: [], prefs: {download.default_directory: C:\ProgramData\Jenkins\.jen..., download.prompt_for_download: false, safebrowsing.enabled: true}}}]}]
+01:10:07  Capabilities {browserName: MicrosoftEdge, ms:edgeOptions: {args: [--headless=new, --disable-gpu, --window-size=1440,1000], binary: C:\Program Files (x86)\Micr..., extensions: [], prefs: {download.default_directory: C:\ProgramData\Jenkins\.jen..., download.prompt_for_download: false, safebrowsing.enabled: true}}}
+01:10:07  	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:115)
+01:10:07  	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+01:10:07  	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+01:10:07  	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:228)
+01:10:07  	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217)
+01:10:07  	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+01:10:07  	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:689)
+01:10:07  	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:294)
+01:10:07  	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:244)
+01:10:07  	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:229)
+01:10:07  	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:108)
+01:10:07  	at org.openqa.selenium.edge.EdgeDriver.<init>(EdgeDriver.java:64)
+01:10:07  	at org.openqa.selenium.edge.EdgeDriver.<init>(EdgeDriver.java:52)
+01:10:07  	at org.openqa.selenium.edge.EdgeDriver.<init>(EdgeDriver.java:48)
+01:10:07  	at com.example.demo.SpendwiseSeleniumJourneyTest.startBrowser(SpendwiseSeleniumJourneyTest.java:78)
+01:10:07  
+01:10:07  [INFO] 
+01:10:07  [INFO] Results:
+01:10:07  [INFO] 
+01:10:07  [ERROR] Errors: 
+01:10:07  [ERROR]   SpendwiseSeleniumJourneyTest.startBrowser:78 � SessionNotCreated Could not start a new session. Response code 500. Message: session not created: Microsoft Edge failed to start: crashed.
+01:10:07    (session not created: DevToolsActivePort file doesn't exist)
+01:10:07    (The process started from msedge location C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe is no longer running, so msedgedriver is assuming that msedge has crashed.) 
+01:10:07  Host info: host: 'DESKTOP-VDHO6U7', ip: '192.168.0.103'
+01:10:07  Build info: version: '4.51.0', revision: '35c5fab 35c5fab4a58fa5878edb255eb7747b04ca51a015'
+01:10:07  System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.12'
+01:10:07  Driver info: org.openqa.selenium.edge.EdgeDriver
+01:10:07  Command: [null, newSession {capabilities=[Capabilities {browserName: MicrosoftEdge, ms:edgeOptions: {args: [--headless=new, --disable-gpu, --window-size=1440,1000], binary: C:\Program Files (x86)\Micr..., extensions: [], prefs: {download.default_directory: C:\ProgramData\Jenkins\.jen..., download.prompt_for_download: false, safebrowsing.enabled: true}}}]}]
+01:10:07  Capabilities {browserName: MicrosoftEdge, ms:edgeOptions: {args: [--headless=new, --disable-gpu, --window-size=1440,1000], binary: C:\Program Files (x86)\Micr..., extensions: [], prefs: {download.default_directory: C:\ProgramData\Jenkins\.jen..., download.prompt_for_download: false, safebrowsing.enabled: true}}}
+01:10:07  [ERROR]   SpendwiseSeleniumJourneyTest.startBrowser:78 � SessionNotCreated Could not start a new session. Response code 500. Message: session not created: Microsoft Edge failed to start: crashed.
+01:10:07    (session not created: DevToolsActivePort file doesn't exist)
+01:10:07    (The process started from msedge location C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe is no longer running, so msedgedriver is assuming that msedge has crashed.) 
+01:10:07  Host info: host: 'DESKTOP-VDHO6U7', ip: '192.168.0.103'
+01:10:07  Build info: version: '4.51.0', revision: '35c5fab 35c5fab4a58fa5878edb255eb7747b04ca51a015'
+01:10:07  System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.12'
+01:10:07  Driver info: org.openqa.selenium.edge.EdgeDriver
+01:10:07  Command: [null, newSession {capabilities=[Capabilities {browserName: MicrosoftEdge, ms:edgeOptions: {args: [--headless=new, --disable-gpu, --window-size=1440,1000], binary: C:\Program Files (x86)\Micr..., extensions: [], prefs: {download.default_directory: C:\ProgramData\Jenkins\.jen..., download.prompt_for_download: false, safebrowsing.enabled: true}}}]}]
+01:10:07  Capabilities {browserName: MicrosoftEdge, ms:edgeOptions: {args: [--headless=new, --disable-gpu, --window-size=1440,1000], binary: C:\Program Files (x86)\Micr..., extensions: [], prefs: {download.default_directory: C:\ProgramData\Jenkins\.jen..., download.prompt_for_download: false, safebrowsing.enabled: true}}}
+01:10:07  [ERROR]   SpendwiseSeleniumJourneyTest.startBrowser:78 � SessionNotCreated Could not start a new session. Response code 500. Message: session not created: Microsoft Edge failed to start: crashed.
+01:10:07    (session not created: DevToolsActivePort file doesn't exist)
+01:10:07    (The process started from msedge location C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe is no longer running, so msedgedriver is assuming that msedge has crashed.) 
+01:10:07  Host info: host: 'DESKTOP-VDHO6U7', ip: '192.168.0.103'
+01:10:07  Build info: version: '4.51.0', revision: '35c5fab 35c5fab4a58fa5878edb255eb7747b04ca51a015'
+01:10:07  System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.12'
+01:10:07  Driver info: org.openqa.selenium.edge.EdgeDriver
+01:10:07  Command: [null, newSession {capabilities=[Capabilities {browserName: MicrosoftEdge, ms:edgeOptions: {args: [--headless=new, --disable-gpu, --window-size=1440,1000], binary: C:\Program Files (x86)\Micr..., extensions: [], prefs: {download.default_directory: C:\ProgramData\Jenkins\.jen..., download.prompt_for_download: false, safebrowsing.enabled: true}}}]}]
+01:10:07  Capabilities {browserName: MicrosoftEdge, ms:edgeOptions: {args: [--headless=new, --disable-gpu, --window-size=1440,1000], binary: C:\Program Files (x86)\Micr..., extensions: [], prefs: {download.default_directory: C:\ProgramData\Jenkins\.jen..., download.prompt_for_download: false, safebrowsing.enabled: true}}}
+01:10:07  [ERROR]   SpendwiseSeleniumJourneyTest.startBrowser:78 � SessionNotCreated Could not start a new session. Response code 500. Message: session not created: Microsoft Edge failed to start: crashed.
+01:10:07    (session not created: DevToolsActivePort file doesn't exist)
+01:10:07    (The process started from msedge location C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe is no longer running, so msedgedriver is assuming that msedge has crashed.) 
+01:10:07  Host info: host: 'DESKTOP-VDHO6U7', ip: '192.168.0.103'
+01:10:07  Build info: version: '4.51.0', revision: '35c5fab 35c5fab4a58fa5878edb255eb7747b04ca51a015'
+01:10:07  System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.12'
+01:10:07  Driver info: org.openqa.selenium.edge.EdgeDriver
+01:10:07  Command: [null, newSession {capabilities=[Capabilities {browserName: MicrosoftEdge, ms:edgeOptions: {args: [--headless=new, --disable-gpu, --window-size=1440,1000], binary: C:\Program Files (x86)\Micr..., extensions: [], prefs: {download.default_directory: C:\ProgramData\Jenkins\.jen..., download.prompt_for_download: false, safebrowsing.enabled: true}}}]}]
+01:10:07  Capabilities {browserName: MicrosoftEdge, ms:edgeOptions: {args: [--headless=new, --disable-gpu, --window-size=1440,1000], binary: C:\Program Files (x86)\Micr..., extensions: [], prefs: {download.default_directory: C:\ProgramData\Jenkins\.jen..., download.prompt_for_download: false, safebrowsing.enabled: true}}}
+01:10:07  [INFO] 
+01:10:07  [ERROR] Tests run: 5, Failures: 0, Errors: 4, Skipped: 0
+01:10:07  [INFO] 
+01:10:07  [INFO] ------------------------------------------------------------------------
+01:10:07  [ERROR] BUILD FAILURE
+01:10:07  [INFO] ------------------------------------------------------------------------
+01:10:07  [INFO] Total time:  46.293 s
+01:10:07  [INFO] Finished at: 2026-10-28T01:10:06+05:30
+01:10:07  [INFO] ------------------------------------------------------------------------
+01:10:07  [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.6:test (default-test) on project demo: 
+01:10:07  [ERROR] 
+01:10:07  [ERROR] See C:\ProgramData\Jenkins\.jenkins\workspace\Expense-Manager-Pipeline-Deploy\target\surefire-reports for the individual test results.
+01:10:07  [ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+01:10:07  [ERROR] -> [Help 1]
+01:10:07  [ERROR] 
+01:10:07  [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+01:10:07  [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+01:10:07  [ERROR] 
+01:10:07  [ERROR] For more information about the errors and possible solutions, please read the following articles:
+01:10:07  [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Archive WAR)
+Stage "Archive WAR" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy to Tomcat)
+Stage "Deploy to Tomcat" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] junit
+01:10:08  Recording test results
+01:10:08  [Checks API] No suitable checks publisher found.
+[Pipeline] archiveArtifacts
+01:10:09  Archiving artifacts
+[Pipeline] archiveArtifacts
+01:10:09  Archiving artifacts
+01:10:09  Recording fingerprints
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+Finished: FAILURE

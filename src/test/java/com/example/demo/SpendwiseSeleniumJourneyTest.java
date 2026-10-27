@@ -68,7 +68,14 @@ class SpendwiseSeleniumJourneyTest {
         Files.createDirectories(downloadDirectory);
 
         EdgeOptions options = new EdgeOptions();
-        options.addArguments("--headless=new", "--disable-gpu", "--window-size=1440,1000");
+        options.addArguments(
+                "--headless=new",
+                "--disable-gpu",
+                "--window-size=1440,1000",
+                "--no-first-run",
+                "--no-default-browser-check",
+                "--disable-extensions");
+        options.addArguments("--user-data-dir=" + downloadDirectory.resolve("edge-profile").toString());
         Map<String, Object> preferences = new HashMap<>();
         preferences.put("download.default_directory", downloadDirectory.toString());
         preferences.put("download.prompt_for_download", false);
