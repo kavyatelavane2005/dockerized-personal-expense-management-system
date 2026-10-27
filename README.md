@@ -1,6 +1,6 @@
 # Dockerized Personal Expense Management System
 
-A Spring Boot application being developed as an academic DevOps project. The current starter endpoint confirms that the web application starts; the expense-management MVP features are planned for subsequent tasks.
+A Spring Boot application being developed as an academic DevOps project. This branch adds the first expense-entry workflow. Expense records are currently held in memory and are cleared when the application restarts; persistent storage will be added in a later task.
 
 ## Technology
 
@@ -18,18 +18,11 @@ In PowerShell, from this folder:
 .\mvnw.cmd spring-boot:run
 ```
 
-The application listens on [http://localhost:8081](http://localhost:8081). The starter endpoint currently displays: `Personal Expense Management System is running`.
-
-## Planned MVP
-
-- Account setup
-- Expense entry and input validation
-- Expense list and summary
-- Downloadable transaction status or receipt
+Open [http://localhost:8081](http://localhost:8081), enter an amount, date, category, and description, then select **Add expense**. The app validates required values and positive amounts before showing the saved entry.
 
 ## Branch naming
 
-Use `feature/task-<number>-<short-name>` for features, `bugfix/<short-name>` for fixes, and `docs/<short-name>` for documentation. Keep branch names lowercase and use hyphens between words. Merge reviewed changes into `main`.
+Use `feature/task-<number>-<short-name>` for features, `bugfix/<short-name>` for fixes, and `docs/<short-name>` for documentation. Keep branch names lowercase and use hyphens between words. Merge reviewed changes into `development`; merge completed releases into `main`.
 
 ## Project structure
 
@@ -37,7 +30,3 @@ Use `feature/task-<number>-<short-name>` for features, `bugfix/<short-name>` for
 - `src/main/resources` — application configuration
 - `src/test/java` — automated tests
 - `Evidence/` — task evidence and build logs
-
-## Status
-
-The starter project builds successfully and the root endpoint has been verified locally. Feature implementation is in progress.
