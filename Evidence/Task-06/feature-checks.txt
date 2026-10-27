@@ -4,3 +4,5 @@ POST /expenses -> 200; sample expense saved
 GET receipt -> 200; attachment; filename=expense-receipt-1.txt; receipt id present: True
 GET CSV -> 200; attachment; filename=expense-summary.csv; sample row present: True
 POST negative amount -> HTTP 400; rejected as expected
+POST invalid email -> HTTP 400; rejected as expected
+POST invalid date -> HTTP 400; rejected as expected
