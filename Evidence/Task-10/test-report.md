@@ -23,3 +23,11 @@ The existing Pipeline job should build branch `feature/task-10-continuous-testin
 ## Edge launch adjustment verification
 
 Added a per-test `--user-data-dir` beneath the unique Selenium download folder and disabled first-run checks/extensions. Local `mvnw.cmd -B verify` passed again: 5 tests, 0 failures, 0 errors, 0 skipped. Log: `local-edge-profile-test.log`; Surefire reports: `local-edge-profile-reports/`. Jenkins build must be rerun to confirm behavior under its service account.
+
+## Latest Jenkins rerun
+
+Commit `2aeca05` still fails at Edge startup: 4 Selenium errors, 0 assertion failures. The unique profile flags did not resolve Edge's `DevToolsActivePort file doesn't exist` crash when Jenkins runs as LocalSystem. This is an agent/session configuration issue; the recommended next step is to run the Selenium stage on an interactive Windows agent under the logged-in user. Full console log: `jenkins-edge-crash-rerun.log`.
+
+## Interactive Jenkins agent
+
+The pipeline now targets the `windows-edge` label so browser tests and the deployment stages run on the dedicated Windows agent instead of the LocalSystem controller node. Jenkins node `windows-edge` must be online and configured with the matching label before starting the next build. Node setup screenshot: `screenshots/windows-edge-node-offline.png`.
