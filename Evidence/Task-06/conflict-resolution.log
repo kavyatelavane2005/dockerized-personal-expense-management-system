@@ -1,0 +1,18 @@
+Auto-merging Evidence/Task-06/conflict-demo.txt
+CONFLICT (content): Merge conflict in Evidence/Task-06/conflict-demo.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Status during conflict:
+UU Evidence/Task-06/conflict-demo.txt
+?? Evidence/Task-05/app.session.err.log
+?? Evidence/Task-06/conflict-resolution.log
+
+Conflict markers before resolution:
+<<<<<<< HEAD
+summary=Category totals
+=======
+summary=Overall and category totals
+>>>>>>> feature/task-6-summary-b
+
+Resolution: kept the overall total and category totals wording.
+Resolved content: summary=Overall total and category totals
