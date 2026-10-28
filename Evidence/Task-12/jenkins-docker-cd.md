@@ -19,7 +19,12 @@ Docker app URL: `http://127.0.0.1:8083/`
 
 ## Jenkins run status
 
-Pending: the Jenkins Pipeline job currently checks out the Task 10 branch. Change its SCM branch specifier to `*/feature/task-12-jenkins-docker-cd`, then run the job and record the Jenkins build number, published image tag, and final status here.
+- Jenkins build: `#8` — `SUCCESS`.
+- Jenkins reported tests passed and both Tomcat and Docker deployments completed.
+- Published image: `localhost:5000/spendwise-expense-manager:v0.1.8`.
+- Docker URL: `http://127.0.0.1:8083/`.
+- Post-build verification: container `spendwise-cd` is running from tag `v0.1.8`; HTTP health check returned `200`. Local registry API returned `200`.
+- Jenkins SCM branch: `feature/task-12-jenkins-docker-cd`.
 
 ## Screenshots to add to the Word evidence document
 
