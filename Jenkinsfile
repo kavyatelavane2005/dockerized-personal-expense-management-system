@@ -17,6 +17,10 @@ pipeline {
     environment {
         TOMCAT_HOME = 'C:\\DevTools\\Tomcat\\apache-tomcat-11.0.27'
         TOMCAT_PORT = '8090'
+        DOCKER_REGISTRY = 'localhost:5000'
+        DOCKER_REPOSITORY = 'spendwise-expense-manager'
+        DOCKER_CONTAINER = 'spendwise-cd'
+        DOCKER_PORT = '8083'
     }
 
     stages {
@@ -60,6 +64,51 @@ pipeline {
                 '''
             }
         }
+
+        stage('Ensure local Docker registry') {
+            steps {
+                bat '''
+                    docker start spendwise-local-registry >NUL 2>&1
+                    if errorlevel 1 (
+                        docker volume create spendwise-registry-data
+                        if errorlevel 1 exit /b 1
+                        docker run -d --name spendwise-local-registry --restart unless-stopped -p 127.0.0.1:5000:5000 -v spendwise-registry-data:/var/lib/registry registry:2
+                        if errorlevel 1 exit /b 1
+                    )
+                    curl.exe --fail --silent --show-error http://127.0.0.1:5000/v2/ >NUL
+                    if errorlevel 1 exit /b 1
+                '''
+            }
+        }
+
+        stage('Build and publish Docker image') {
+            steps {
+                bat '''
+                    set "IMAGE_TAG=%DOCKER_REGISTRY%/%DOCKER_REPOSITORY%:v0.1.%BUILD_NUMBER%"
+                    docker build -t "%IMAGE_TAG%" .
+                    if errorlevel 1 exit /b 1
+                    docker push "%IMAGE_TAG%"
+                    if errorlevel 1 exit /b 1
+                '''
+            }
+        }
+
+        stage('Deploy fresh Docker container') {
+            steps {
+                bat '''
+                    set "IMAGE_TAG=%DOCKER_REGISTRY%/%DOCKER_REPOSITORY%:v0.1.%BUILD_NUMBER%"
+                    docker pull "%IMAGE_TAG%"
+                    if errorlevel 1 exit /b 1
+                    docker stop "%DOCKER_CONTAINER%" >NUL 2>&1
+                    docker rm "%DOCKER_CONTAINER%" >NUL 2>&1
+                    docker run --detach --name "%DOCKER_CONTAINER%" --restart unless-stopped --publish 127.0.0.1:%DOCKER_PORT%:8080 "%IMAGE_TAG%"
+                    if errorlevel 1 exit /b 1
+                '''
+                bat '''
+                    powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command "$uri='http://127.0.0.1:%DOCKER_PORT%/'; $ready=$false; for($i=0; $i -lt 45; $i++){ try { $response=Invoke-WebRequest -Uri $uri -UseBasicParsing -TimeoutSec 3; if($response.StatusCode -eq 200 -and $response.Content.Contains('Spendwise')) { $ready=$true; break } } catch { }; Start-Sleep -Seconds 2 }; if(-not $ready){ Write-Error ('Docker deployment health check failed: ' + $uri); exit 1 }"
+                '''
+            }
+        }
     }
 
     post {
@@ -71,8 +120,10 @@ pipeline {
             archiveArtifacts artifacts: 'Evidence/Task-09/failure-screenshots/**/*.png', fingerprint: true, allowEmptyArchive: true
         }
         success {
-            echo 'Tests passed and deployment completed successfully.'
-            echo 'Open the deployed application at http://localhost:8090/expense-manager-<DEPLOY_ENV>/.'
+            echo 'Tests passed; Tomcat and Docker deployments completed successfully.'
+            echo "Tomcat app: http://localhost:8090/expense-manager-${params.DEPLOY_ENV}/"
+            echo "Docker app: http://127.0.0.1:${env.DOCKER_PORT}/"
+            echo "Published image: ${env.DOCKER_REGISTRY}/${env.DOCKER_REPOSITORY}:v0.1.${env.BUILD_NUMBER}"
         }
     }
 }
