@@ -53,6 +53,9 @@ pipeline {
                     if errorlevel 1 exit /b 1
                 '''
                 bat '''
+                    powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command "$port=%TOMCAT_PORT%; if(-not (Test-NetConnection -ComputerName 127.0.0.1 -Port $port -InformationLevel Quiet)){ $tomcat='%TOMCAT_HOME%'; Start-Process -FilePath 'cmd.exe' -ArgumentList '/c','startup.bat' -WorkingDirectory (Join-Path $tomcat 'bin') -WindowStyle Hidden }"
+                '''
+                bat '''
                     powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command "$uri='http://localhost:%TOMCAT_PORT%/expense-manager-%DEPLOY_ENV%/'; $ready=$false; for($i=0; $i -lt 30; $i++){ try { $response=Invoke-WebRequest -Uri $uri -UseBasicParsing -TimeoutSec 3; if($response.StatusCode -eq 200 -and $response.Content.Contains('Spendwise')) { $ready=$true; break } } catch { }; Start-Sleep -Seconds 2 }; if(-not $ready){ Write-Error ('Health check failed: ' + $uri); exit 1 }"
                 '''
             }
